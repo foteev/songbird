@@ -10,16 +10,405 @@ body {
   margin: auto;
   text-align: center;
   max-width: $page-width;
+  caret-color: transparent;
 }
 
-h1 {
-  margin: 0 0 2rem;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.4rem;
 }
 
-.image {
-  display: inline-block;
+.logo {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 1rem;
+}
+
+.logo__img {
+  width: 120px;
   height: 100px;
-  width: 100px;
-  background-image: url('~assets/example.png');
+}
+
+.nav {
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.menu__item {
+  list-style-type: none;
+}
+
+.menu-button {
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.start {
+  caret-color: transparent;
+  width: 100%;
+  height: 500px;
+}
+
+.start__biglogo__img {
+  margin-left: 10%;
+  // width: 60%;
+  max-height: 100%;
+  max-width: 100%;
+  animation: shake 3s ease infinite;
+}
+
+@keyframes shake{
+  0% { transform: skewX(-5deg); }
+  5% { transform: skewX(5deg); }
+  10% { transform: skewX(-5deg); }
+  15% { transform: skewX(5deg); }
+  20% { transform: skewX(5deg); }
+  100% { transform: skewX(-5deg); }
+ }
+ 
+ @keyframes shake{
+  0% { transform: skewY(-5deg); }
+  5% { transform: skewY(5deg); }
+  10% { transform: skewY(-5deg); }
+  15% { transform: skewY(5deg); }
+  20% { transform: skewY(5deg); }
+  100% { transform: skewY(-5deg); }
+ }
+
+.game__top {
+  padding: 10px;
+  color: grey;
+  font-size: smaller;
+}
+
+.game__top__group {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.game__top__group-active {
+  color: black;
+  font-weight: 800;
+}
+
+.game-columns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.game__left {
+  width: 300px;
+  height: 500px;
+  background-image: url(../images/tv_bw.jpg);
   background-size: cover;
+}
+
+.game__left__screen {
+  width: 65%;
+  height: 24%;
+  max-height: 150px;
+  margin-top: 189px;
+}
+
+.game__center {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  height: 500px;
+}
+
+.game__center__score {
+  margin-bottom: -20px;
+}
+
+.game__center__player {
+  margin: 0 auto;
+}
+
+.game__center__choice__list {
+  padding-left: 0px;
+}
+
+.game__center__choice__list__title {
+  list-style-type: none;
+}
+
+.game-button {
+  width: 70%;
+  padding: 5px;
+  margin: 3px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.game__center__continue__button {
+  width: 30%;
+  padding: 10px;
+  margin: 3px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.game-button-lost {
+  color: red;
+}
+
+.game-button-win {
+  color: green;
+}
+
+.game__right {
+  width: 25%;
+  height: 500px;
+  background: $info-color-none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game__right__info {
+  margin: 15px;
+  color: white;
+}
+
+.game__right__info__name {
+  margin: 10px;
+  font-size: 25px;
+}
+
+.game__right__info__species {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.game__right__info__description {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.game__right__info__image {
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 40%;
+}
+
+.bird-image {
+  max-width: 70%;
+  max-height: 200px;
+}
+.results {
+  height: 500px;
+}
+
+.results__total__block {
+  padding-top: 200px;
+
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__nav {
+  margin: 0 auto;
+  // width: 90%
+}
+
+.footer__nav__menu {
+  display: flex;
+  gap: 30px;
+}
+
+.footer__nav__menu__item {
+  list-style-type: none;
+  display: flex;
+}
+
+.footer__logo {
+  width: 50px;
+}
+
+a {
+  text-decoration : none;
+  color: black;
+}
+
+@media all and (max-width: 1024px)  {
+  .game__columns {
+    flex-direction: column;
+  }
+  .game__left {
+    display: none;
+  }
+
+  .game__center {
+    width: 50%;
+  }
+  .game__right {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 639px)  {
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .game__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    color: grey;
+    font-size: smaller;
+  }
+  
+  .game__top__group {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  .game-columns {
+      flex-direction: column;
+  }
+
+  .game__left {
+    display: none;
+  }
+
+  .game__center {
+    width: 100%;
+  }
+
+  .game__right {
+    width: 100%;
+
+  }
+}
+
+@media all and (min-width:320px) and (max-width: 639px){
+
+  .header {
+      height: 90px;
+  }
+
+  .hamburger-menu {
+      display: block;
+  }
+
+  .menu-button {
+      display: none;
+  }
+
+  .menu__item__score {
+    position: absolute;
+    margin: 0 -20px 0 0;
+  }
+
+  #menu__toggle {
+      opacity: 0;
+    }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    width: 32px;
+    height: 46px;
+    cursor: pointer;
+    // z-index: 10;
+    color: white;
+    z-index: 20;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: grey;
+    transition-duration: .25s;
+  }
+
+  .menu__btn > span::before {
+    content: '';
+    top: -5px;
+  }
+
+  .menu__btn > span::after {
+    content: '';
+    top:5px;
+  }
+  
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+    list-style: none;
+    background-color: lightgrey;
+    /* box-shadow: 1px 0px 6px rgba(0, 0, 0, .2); */
+    -webkit-box-shadow: 4px 4px 8px 10000px rgba(17, 30, 41, 0.5);
+    -moz-box-shadow: 4px 4px 8px 10000px rgba(17, 31, 41, 0.5);
+    box-shadow: 4px 4px 8px 10000px rgba(7, 12, 15, 0.5);
+    transition-duration: .25s;
+    z-index: 10;
+  }
+  
+  .menu__item {
+    display: block;
+    padding: 9px 12px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 140%;
+    transition-duration: .25s;
+  }
+
+  .menu__item:hover {
+    background-color: lightgrey;
+  }
 }

@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[name].bundle.js',
-    // publicPath: '/',
+    publicPath: '/',
   },
 
   // Customize the webpack build process
@@ -48,32 +48,13 @@ module.exports = {
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.js$/, use: ['babel-loader'],
-        generator: {
-        filename: 'js/[name][ext]'
-        }},
+      { test: /\.js$/, use: ['babel-loader'] },
 
       // Images: Copy image files to build folder
-      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'assets/img/[name][ext]'
-        }},
+      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
 
       // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: 'asset/inline',
-        // generator: {
-        //   filename: 'assets/fonts/[name][ext]'
-        // }
-      },
-      {
-        test: /\.(mp3|wav)$/i,
-        type: 'asset',
-        // generator: {
-        //   filename: 'assets/audio/[name][ext]'
-        // }
-      }
+      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
     ],
   },
 
