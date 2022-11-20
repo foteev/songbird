@@ -216,6 +216,7 @@ resultsButtonHam.addEventListener('click', () => {
 })
 
 resultsTotalButton.addEventListener('click', () => {
+  startAudio.pause()
   clearGameInfo()
   group = 0
   points = 0
