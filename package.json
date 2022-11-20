@@ -11,7 +11,7 @@
     "dev": "cross-env NODE_ENV=development webpack --config config/webpack.dev.js",
     "lint": "eslint 'src/**/*.js' || true",
     "prettify": "prettier --write 'src/**/*.js'",
-    "deploy": "npx gh-pages -d dist/ -e /songbird"
+    "deploy": "npm run dev && npx gh-pages -d dist/ -e songbird/"
   },
   "keywords": [
     "webpack",
